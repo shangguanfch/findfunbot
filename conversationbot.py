@@ -66,10 +66,7 @@ def error(bot, update, error):
 
 
 def main():
-    # Create the EventHandler and pass it your bot's token.
-    updater = Updater("TOKEN")
-
-    # Get the dispatcher to register handlers
+    updater = Updater("366339506:AAEYRx7lDHeCIgz37Luh4zOVBdvXnkBbRzk")
     dp = updater.dispatcher
 
     # Add conversation handler with the states GENDER, PHOTO, LOCATION and BIO
