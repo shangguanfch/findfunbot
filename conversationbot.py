@@ -46,7 +46,7 @@ def photo(bot, update):
 def skip_photo(bot, update):
     user = update.message.from_user
     logger.info("User %s did not send a photo." % user.first_name)
-    update.message.reply_text('I bet you look great! Now, send me your bio please, ')
+    update.message.reply_text('I bet you look great! Now, send me your bio please.')
     return BIO
 
 def bio(bot, update):
