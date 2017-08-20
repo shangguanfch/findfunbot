@@ -40,13 +40,13 @@ def photo(bot, update):
     photo_file = bot.get_file(update.message.photo[-1].file_id)
     photo_file.download('user_photo.jpg')
     logger.info("Photo of %s: %s" % (user.first_name, 'user_photo.jpg'))
-    update.message.reply_text('Gorgeous! Now, send me your location please, ' 'or send /skip if you don\'t want to. ')
+    update.message.reply_text('Gorgeous! Now, send me your bio please, ' 'or send /skip if you don\'t want to. ')
     return BIO
 
 def skip_photo(bot, update):
     user = update.message.from_user
     logger.info("User %s did not send a photo." % user.first_name)
-    update.message.reply_text('I bet you look great! Now, send me your location please, ' 'or send /skip.')
+    update.message.reply_text('I bet you look great! Now, send me your bio please, ')
     return BIO
 
 def bio(bot, update):
