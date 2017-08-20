@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 GENDER, PHOTO, BIO = range(3)
 
-def start(bot, update):
+def conv(bot, update):
     reply_keyboard = [['Boy', 'Girl', 'Other']]
     update.message.reply_text('Hi! My name is Find Fun Bot. I will hold a conversation with you.' 'Send /cancel to stop talking to me.\n\n' 'Are you a boy or a girl?', reply_markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard = True))
     return GENDER
