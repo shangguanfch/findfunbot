@@ -1,17 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Simple Bot to reply to Telegram messages
-"""
-This Bot uses the Updater class to handle the bot.
-First, a few handler functions are defined. Then, those functions are passed to
-the Dispatcher and registered at their respective places.
-Then, the bot is started and runs until we press Ctrl-C on the command line.
-
-Usage:
-Basic Echobot example, repeats messages.
-Press Ctrl-C on the command line or send a signal to the process to stop the
-bot.
-"""
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
@@ -25,6 +13,9 @@ logger = logging.getLogger(__name__)
 # update. Error handlers also receive the raised TelegramError object in error.
 def start(bot, update):
     update.message.reply_text('Hi!')
+
+def hello(bot, update):
+    update.message.reply_text('Hello, {}'.format(update.message.from_user.first_name))
 
 def help(bot, update):
     update.message.reply_text('Help!')
@@ -45,6 +36,7 @@ def main():
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("hello", hello))
     dp.add_handler(CommandHandler("help", help))
     
     # on noncommand i.e message - echo the message on Telegram
