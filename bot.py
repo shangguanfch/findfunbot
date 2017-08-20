@@ -21,7 +21,7 @@ def help(bot, update):
     update.message.reply_text('Help!')
 
 def echo(bot, update):
-    update.message.reply_text(update.message.text)
+    update.message.reply_text('不好意思，我还不够聪明，听不懂你在说什么')
 
 def error(bot, update, error):
     logger.warn('Update "%s" caused error "%s"' % (update, error))
